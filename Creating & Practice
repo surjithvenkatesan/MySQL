@@ -1,0 +1,16 @@
+-- create data base 
+create DATABASE if not exists student;
+USE student;
+DROP TABLE IF EXISTS student;
+CREATE TABLE IF NOT EXISTS student(ID INT PRIMARY KEY, Name VARCHAR(20), CGP DECIMAL(3,2));
+INSERT INTO student values (1,"yal",8.72);
+INSERT INTO Student VALUES (2,"AMUTHAN",8.52);
+ALTER TABLE student RENAME COLUMN CGP to CGPA;
+INSERT INTO student VALUE (3,"NILA",9.43);
+ALTER TABLE student ADD COLUMN AGE INT;
+UPDATE student set AGE=10 WHERE ID=1;
+UPDATE student SET AGE=13 WHERE ID=3;
+UPDATE student SET AGE=16 WHERE ID=2;
+DELETE FROM student WHERE ID=4; 
+
+SELECT * FROM student;
