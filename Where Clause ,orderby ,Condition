@@ -1,0 +1,53 @@
+create database if not exists company;
+drop table if exists employee;
+CREATE TABLE IF NOT EXISTS employee ( 
+ID INT PRIMARY KEY, Ename VARCHAR(30),Job_role VARCHAR(20), salary INT );
+
+INSERT INTO employee VALUES(1,"YAL","ADMIN",100000);
+INSERT INTO employee VALUES(2,"AMUTHAN","MANGER",110000);
+INSERT INTO employee VALUES(3,"NILA","SALES",23000);
+INSERT INTO employee VALUES(4,"HARVIN","HR",13000);
+INSERT INTO employee VALUES(5,"SAI","SALES",16000);
+INSERT INTO employee VALUES(6,"VARNIKA","CEO",1000000);
+INSERT INTO employee VALUES(7,"SURJITH","FOUNDER",100000000);
+INSERT INTO employee VALUES(8,"VIJII","IT",800000);
+
+select * from employee Where Ename="SAI";
+SELECT * FROM employee WHERE Job_role <> "CEO";
+
+SELECT ename,job_role FROM employee WHERE salary >1000000;
+SELECT * FROM employee  
+Where job_role not in ("SALES","IT","FOUNDER") limit 2;
+
+SELECT * FROM employee 
+WHERE Job_role like 'S%';
+
+SELECT * FROM employee
+WHERE ename like '%i%';
+
+SELECT * FROM employee
+WHERE ename LIKE '_A%';
+
+SELECT Job_role FROM employee;
+
+select* from employee;
+
+-- ORDER BY
+
+SELECT * FROM employee 
+order by salary desc;
+
+SELECT * FROM employee 
+order by salary desc, Ename;
+
+SELECT * FROM employee 
+order by (CASE job_role 
+WHEN 'CEO' THEN 1
+WHEN 'MANGER' THEN 2
+WHEN 'ADMIN' THEN 3
+WHEN 'HR' THEN 4
+ELSE 100 END 
+);
+
+
+
